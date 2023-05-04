@@ -27,6 +27,24 @@ programa
 				escreva("Candidato 3 recebeu um voto")
 				pare
 
+				caso 9:
+				votoNulo++
+				escreva("Voto Nulo")
+				pare
+
+				caso 6:
+				votoBranco++
+				escreva("Voto Branco")
+				pare
+
+				caso 0:
+				escreva("Encerrar votação")
+
+				caso 10:
+				escreva("Votação encerrada!") 
+
+				se 
+				
 		}
 }
 }
@@ -35,7 +53,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 552; 
+ * @POSICAO-CURSOR = 795; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
