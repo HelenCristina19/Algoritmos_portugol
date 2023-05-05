@@ -5,9 +5,9 @@ programa
 	funcao inicio()
 	{
 		inteiro numeroCandidato, nulo, branco
-		real candidato1, candidato2, candidato3, percentualCandidato1, percentualCandidato2, percentualCandidato3, numeroVotante
+		real candidato1, candidato2, candidato3, percentualCandidato1, percentualCandidato2, percentualCandidato3, numeroVotos
 		
-		numeroVotante = 0.0
+		numeroVotos = 0.0
 		candidato1 = 0.0
 		candidato2 = 0.0
 		candidato3 = 0.0
@@ -21,25 +21,25 @@ programa
 			escolha (numeroCandidato) {
 			caso 1: 
 				candidato1++ 
-				numeroVotante++
+				numeroVotos++
 				escreva("Candidato 1 recebeu um voto \n")
 				pare 
 				
 			caso 2:
 				candidato2++
-				numeroVotante++
+				numeroVotos++
 				escreva("Candidato 2 recebeu um voto \n")
 				pare
 				
 			caso 3:
 				candidato3++
-				numeroVotante++
+				numeroVotos++
 				escreva("Candidato 3 recebeu um voto \n")
 				pare
 				
 			caso 6: 
 				nulo++
-				numeroVotante++
+				numeroVotos++
 				escreva("O voto foi nulo \n")
 				pare
 
@@ -48,7 +48,7 @@ programa
 			
 			caso contrario:
 				branco++
-				numeroVotante++
+				numeroVotos++
 				escreva("O voto foi em branco \n")
 	
 			} 
@@ -67,13 +67,13 @@ programa
 			
 			limpa()
 
-			percentualCandidato1 = (candidato1 / numeroVotante) * 100
+			percentualCandidato1 = (candidato1 / numeroVotos) * 100
 			percentualCandidato1 = Mat.arredondar(percentualCandidato1, 3)
 			
-			percentualCandidato2 = (candidato2 / numeroVotante) * 100
+			percentualCandidato2 = (candidato2 / numeroVotos) * 100
 			percentualCandidato2 = Mat.arredondar(percentualCandidato2, 3)
 			
-			percentualCandidato3 = (candidato3 / numeroVotante) * 100
+			percentualCandidato3 = (candidato3 / numeroVotos) * 100
 			percentualCandidato3 = Mat.arredondar(percentualCandidato3, 3)
 			
 			escreva("Valor do percentual de votos do candidato 1 é: ", percentualCandidato1, "%. \n")
@@ -100,7 +100,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2273; 
+ * @POSICAO-CURSOR = 1010; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
