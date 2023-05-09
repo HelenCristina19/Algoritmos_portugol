@@ -4,8 +4,9 @@ programa
 	 
 	funcao inicio()
 	{
-		inteiro numeroCandidato, nulo, branco
+		inteiro numeroCandidato, nulo, branco, confirmaCandidato 
 		real candidato1, candidato2, candidato3, percentualCandidato1, percentualCandidato2, percentualCandidato3, numeroVotos
+		cadeia nomeCandidato1 = "Helen", nomeCandidato2 = "Enrick", nomeCandidato3 = "Guilherme", confirma, naoConfirma
 		
 		numeroVotos = 0.0
 		candidato1 = 0.0
@@ -14,27 +15,50 @@ programa
 		nulo = 0
 		branco = 0
 
+
+		escreva("Nome do Candidato 1: ")
+		leia(nomeCandidato1)
+
+          escreva("Nome do Candidato 2: ")
+		leia(nomeCandidato2)
+
+	
+          escreva("Nome do Candidato 3: ")
+		leia(nomeCandidato3)
+
+		
 		faca{
 			escreva("Digite o número do candidato: ")
-			leia(numeroCandidato)
+			leia(confirmaCandidato)
+
+			escreva("Você confirma o seu voto? S/N: ")
+			leia(confirma)
+
+			se(confirma == 's') {
+				   numeroCandidato == confirmaCandidato
+			}
+
+			senao{
+				
+			}
 
 			escolha (numeroCandidato) {
 			caso 1: 
 				candidato1++ 
 				numeroVotos++
-				escreva("Candidato 1 recebeu um voto \n")
+				escreva(nomeCandidato1, " recebeu um voto \n")
 				pare 
 				
 			caso 2:
 				candidato2++
 				numeroVotos++
-				escreva("Candidato 2 recebeu um voto \n")
+				escreva(nomeCandidato2, " recebeu um voto \n")
 				pare
 				
 			caso 3:
 				candidato3++
 				numeroVotos++
-				escreva("Candidato 3 recebeu um voto \n")
+				escreva(nomeCandidato3, " recebeu um voto \n")
 				pare
 				
 			caso 6: 
@@ -52,7 +76,7 @@ programa
 				escreva("O voto foi em branco \n")
 	
 			} 
-		}enquanto(numeroCandidato != 0)
+		}enquanto (numeroCandidato != 0)
 		
 			
 				se(candidato1>candidato2 e candidato1>candidato3){
@@ -76,18 +100,25 @@ programa
 			percentualCandidato3 = (candidato3 / numeroVotos) * 100
 			percentualCandidato3 = Mat.arredondar(percentualCandidato3, 3)
 			
-			escreva("Valor do percentual de votos do candidato 1 é: ", percentualCandidato1, "%. \n")
-			escreva("Valor do percentual de votos do candidato 2 é: ", percentualCandidato2, "%. \n")
-			escreva("Valor do percentual de votos do candidato 3 é: ", percentualCandidato3, "%. \n")
-	
+			escreva("Valor do percentual de votos para ", nomeCandidato1, " é: ", percentualCandidato1, "%. \n")
+			escreva("Valor do percentual de votos para ", nomeCandidato2, " é: ", percentualCandidato2, "%. \n")
+			escreva("Valor do percentual de votos para ", nomeCandidato3, " é: ", percentualCandidato3, "%. \n")
+
 			
+	
+				//Para o candidato 1 ganhar
 				se(candidato1>candidato2 e candidato1>candidato3){
 					escreva("O candidato 1 ganhou a votação!")
+		
 				}
-				senao se(candidato2>candidato1 e candidato2>candidato3){
+
+				//Para o candidato 2 ganhar
+				se(candidato2>candidato1 e candidato2>candidato3){
 					escreva("O candidato 2 ganhou a votação!")
 				}
-				senao{
+
+				//Para o candidato 3 ganhar
+				se(candidato3>candidato1 e candidato3>candidato2){
 					escreva("O candidato 3 ganhou a votação!")
 				}
 		
@@ -100,7 +131,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1010; 
+ * @POSICAO-CURSOR = 817; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
