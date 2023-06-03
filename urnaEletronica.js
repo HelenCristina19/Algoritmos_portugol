@@ -1,167 +1,110 @@
-function inicio() {
-    numeroCandidato = 0,
-    nulo = 0,
-    branco = 0,
-    confirmaCandidato
+function urnaEletronica() {
+    let numeroCandidato = 0;
+    let nulo = 0;
+    let branco = 0;
+    let candidato1 = 0;
+    let candidato2 = 0;
+    let candidato3 = 0;
+    let numeroVotos = 0;
+    let encerraVotacao = false;
 
-    candidato1 = 0.0,
-    candidato2 = 0.0,
-    candidato3 = 0.0,
-    percentualCandidato1,
-    percentualCandidato2,
-    percentualCandidato3,
-    numeroVotos = 0.0
+    let candidato1Nome = prompt("Nome do candidato 1: ");
+    let candidato2Nome = prompt("Nome do candidato 2: ");
+    let candidato3Nome = prompt("Nome do candidato 3: ");
 
+    window.alert("**Opções de voto **\n\n1- " + candidato1Nome + "\n" + "2- " + candidato2Nome + "\n" + "3- " + candidato3Nome + "\n" + "6- Voto Nulo" + "\n" + "9- Voto em Branco" + "\n" + "PIN- Encerrar votação" + "\n\n");
 
-    confirmaEncerramento = 'n'
+    do {
+        let confirmaCandidato = parseInt(prompt("Digite o número do candidato: "));
 
-    nomeCandidato1 = "Helen",
-    nomeCandidato2 = "Enrick",
-    nomeCandidato3 = "Guilherme",
-    confirma,
-    naoConfirma
-
-    empate = falso,
-    encerraVotacao = falso
-
-
-
-console.log("Nome do Candidato 1: ")
-prompt(nomeCandidato1)
-
-console.log("Nome do Candidato 2: ")
-prompt(nomeCandidato2)
-
-
-console.log("Nome do Candidato 3: ")
-prompt(nomeCandidato3)
-
-
-console.log("Opções de voto: \n")
-console.log("1| ", nomeCandidato1, "\n")
-console.log("2| ", nomeCandidato2, "\n")
-console.log("3| ", nomeCandidato3, "\n")
-console.log("6| Voto Nulo \n")
-console.log("9| Voto em branco \n")
-console.log("PIN| Encerrar votação \n")
-    
-
-
-        do {
-        console.log("\n \n Digite o número do candidato: ")
-        prompt(confirmaCandidato)
-
-        console.log("\n Você confirma o seu voto? \n \n Digite 'S' para Sim \n Digite 'N' para Não \n")
-        prompt(confirma)
-
-    } while(confirma == "N", confirma == "n");
-        if (confirma == "S", ou, confirma == "s"); {
-        numeroCandidato = confirmaCandidato
-    }
-
-       switch (numeroCandidato) {
-
-        case 1:
-        candidato1++ //candidato1 = candidato1 + 1//
-        numeroVotos++
-        console.log(nomeCandidato1, " recebeu um voto \n")
-        break //caso a pessoa tenha escolhido o caso 1 o pragrama vai parar de executar//
-            
-        case 2:
-        candidato2++
-        numeroVotos++
-        console.log(candidato2, " recebeu um voto \n")
-        break
-            
-        case 3:
-        candidato3++
-        numeroVotos++
-        console.log(nomeCandidato3, " recebeu um voto \n")
-        break
-            
-        case 6:
-        nulo++
-        numeroVotos++
-        console.log("O voto foi nulo \n")
-        break
-
-        case 123456:
-        console.click()
-        console.log("Deseja REALMENTE encerrar a votação? \n")
-        console.log("Digite 'S' para sim: ")
-        prompt(confirmaEncerramento)
-
-        if(confirmaEncerramento == 's', ou , confirmaEncerramento == 'S');{
-            encerraVotacao = verdadeiro
+        if (confirmaCandidato == 1234) {
+            numeroCandidato = confirmaCandidato;
         }
-        break
-        
-        case contrario:
-        branco++
-        numeroVotos++
-        console.log("O voto foi em branco \n")
+        else {
+            confirmacao(confirmaCandidato);
+        }
 
+        switch (numeroCandidato) {
+            case 1:
+                candidato1++;
+                numeroVotos++;
+                window.alert(candidato1Nome + " recebeu 1 voto. \n");
+                break;
+            case 2:
+                candidato2++;
+                numeroVotos++;
+                window.alert(candidato2Nome + " recebeu 1 voto. \n");
+                break;
+            case 3:
+                candidato3++;
+                numeroVotos++;
+                window.alert(candidato3Nome + " recebeu 1 voto. \n");
+                break;
+            case 6:
+                nulo++;
+                numeroVotos++;
+                window.alert("O voto foi nulo. \n");
+                break;
+            case 9:
+                branco++;
+                numeroVotos++;
+                window.alert("O voto foi em branco. \n");
+                break;
+            case 1234:
+                console.clear;
+                window.alert("Deseja REALMENTE encerrar a votação?");
+                let confirmaEncerramento = prompt("Digite 'S' para finalizar votação ou 'N' para continuar a votação");
+
+                if (confirmaEncerramento == "s" || confirmaEncerramento == "S") {
+                    encerraVotacao = true;
+                    break;
+                }
+            default:
+                window.alert("1- " + candidato1Nome + "\n" + "2- " + candidato2Nome + "\n" + "3- " + candidato3Nome + "\n" + "6- Voto Nulo" + "\n" + "9- Voto em Branco" + "\n" + "PIN- Encerrar votação" + "\n\n");
+        }
+    } while (encerraVotacao === false);
+
+    if (candidato1 > candidato2 && candidato1 > candidato3) {
+        candidato1 = candidato1 + branco;
+    }
+    else if (candidato2 > candidato1 && candidato2 > candidato3) {
+        candidato2 = candidato3 + branco;
+    }
+    else {
+        candidato3 = candidato3 + branco;
     }
 
-} while(numeroCandidato = 0)
 
-     if(candidato1 > candidato2 && candidato1 > candidato3) {
-      candidato1 = candidato1 + branco
+    console.clear;
 
-} else if (candidato2 > candidato1 && candidato2 > candidato3) {
-    candidato2 = candidato2 + branco
+    let percentualCnadidato1 = (candidato1 / numeroVotante) * 100;
+    let percentualCandidato2 = (candidato2 / numeroVotante) * 100;
+    let percentualCandidato3 = (candidato3 / numeroVotante) * 100;
 
-} else {
-    candidato3 = candidato3 + branco
-}
+    window.alert("Valor do percentual de votos para " + candidato1Nome + " é: " + percentualCandidato1, "%. \n");
+    window.alert("Valor do percentual de votos para " + candidato2Nome + " é: " + percentualCandidato2, "%. \n");
+    window.alert("Valor do percentual de votos para " + candidato3Nome + " é: " + percentualCandidato3, "%. \n");
 
-console.click
+    if (candidato1 > candidato2 && candidato1 > candidato3) {
+        window.alert(candidato1nome + " ganhou a votação!");
+    }
+    else if (candidato2 > candidato1 && candidato2 > candidato3) {
+        window.alert(candidato2nome + " ganhou a votação!");
+    }
+    else {
+        window.alert(candidato3nome + " ganhou a votação!");
+    }
 
-percentualCandidato1 = (candidato1 / numeroVotos) * 100
-percentualCandidato1 = Mat.arredondar(percentualCandidato1, 3)
+    function audioConfirmacao() {
+        const audio = new Audio("./confirma-urna.mp3");
+        audio.play();
+    }
 
-percentualCandidato2 = (candidato2 / numeroVotos) * 100
-percentualCandidato2 = Mat.arredondar(percentualCandidato2, 3)
-
-percentualCandidato3 = (candidato3 / numeroVotos) * 100
-percentualCandidato3 = Mat.arredondar(percentualCandidato3, 3)
-
-console.log("Valor do percentual de votos para ", nomeCandidato1, " é: ", percentualCandidato1, "%. \n")
-console.log("Valor do percentual de votos para ", nomeCandidato2, " é: ", percentualCandidato2, "%. \n")
-console.log("Valor do percentual de votos para ", nomeCandidato3, " é: ", percentualCandidato3, "%. \n")
-
-
-//Para o candidato 1 ganhar
-if(candidato1 > candidato2  && candidato1 > candidato3);{
-    console.log("O candidato 1 ganhou a votação!")
-
-}
-
-//Para o candidato 2 ganhar
-if(candidato2 > candidato1  && candidato2 > candidato3); {
-    console.log("O candidato 2 ganhou a votação!")
-}
-
-//Para o candidato 3 ganhar
-if(candidato3 > candidato1 && candidato3 > candidato2); {
-    console.log("O candidato 3 ganhou a votação!")
-}
-
-
-function audioConfirmacao() {
-const audio = new Audio("./confirmacao.mp3")
-audio.play();
-
-}
-
-function escreverNoConsole() {
-console.log("Mensagem no Console");
-}
-
-function escreverNoAlert() {
-Window.alert("Mensagem no Alert\nOutra mensagem\n\nMais uma mensagem");
-}
-
-function escrevrNoDocumento() {
-document.write("Mensagem no documento");
+    function confirmacao(confirmaNumeroCandidato) {
+        let confirma = prompt("\n Você confirma o seu voto? \n\n Digite 'S' para Sim \n Digite 'N' para Não \n");
+        if (confirma == "S" || confirma == "s") {
+            numeroCandidato = confirmaNumeroCandidato;
+            audioConfirmacao();
+        }
+    }
 }
